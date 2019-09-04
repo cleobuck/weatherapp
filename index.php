@@ -157,7 +157,7 @@ $resultat->closeCursor();
 </table>
 </form>
 
-<form action="weather.php" method="post"> 
+<form method="post"> 
 
 <input type="text"  placeholder="ville" name="ville" size="15">
 <input type="text"   placeholder="max" name="maxima" size="15">
