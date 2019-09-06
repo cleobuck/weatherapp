@@ -94,7 +94,7 @@ if( isset($_POST['submit'])) {
     $_POST['maxima'] = filter_var($_POST['maxima'], FILTER_SANITIZE_NUMBER_INT);
     $_POST['maxima'] = filter_var($_POST['maxima'], FILTER_VALIDATE_INT);
     $_POST['minima'] = filter_var($_POST['minima'], FILTER_SANITIZE_NUMBER_INT);
-    $_POST['maxima'] = filter_var($_POST['minima'], FILTER_VALIDATE_INT);
+    $_POST['minima'] = filter_var($_POST['minima'], FILTER_VALIDATE_INT);
 
 
     if(!empty($_POST['ville']) && !empty($_POST['maxima']) && !empty($_POST['minima'])) {
