@@ -80,7 +80,7 @@ require 'connection.php';
 
 $creation = "CREATE TABLE IF NOT EXISTS Météo
     (`ville` varchar(9), `haut` int, `bas` int)";
-$bd->execute($creation);
+$bd->exec($creation);
 
 
 
