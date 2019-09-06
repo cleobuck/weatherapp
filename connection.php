@@ -16,8 +16,6 @@ catch(Exception $e)
 }
 
 
-CREATE TABLE Météo
-    (`ville` varchar(9), `haut` int, `bas` int); 
 
 
 ?>
