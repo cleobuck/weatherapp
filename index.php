@@ -78,6 +78,11 @@
 
 require 'connection.php'; 
 
+$creation = "CREATE TABLE Météo
+    (`ville` varchar(9), `haut` int, `bas` int)";
+$bd->prepare($creation)->execute();
+
+
 // on va chercher les données du formulaire pour les insérer dans la table
 
 if( isset($_POST['submit'])) {
