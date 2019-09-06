@@ -78,13 +78,11 @@
 
 require 'connection.php'; 
 
-$creation = "CREATE TABLE Météo
+$creation = "CREATE TABLE IF NOT EXISTS Météo
     (`ville` varchar(9), `haut` int, `bas` int)";
-$bd->prepare($creation)->execute();
+$bd->execute($creation);
 
-$test = "INSERT INTO Météo (ville, haut, bas) VALUES (belgique, 22, 3)";
 
-$bd->prepare($test)->execute();
 
 // on va chercher les données du formulaire pour les insérer dans la table
 
