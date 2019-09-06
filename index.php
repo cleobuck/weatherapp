@@ -78,7 +78,7 @@
 
 require 'connection.php'; 
 
-$creation = "CREATE TABLE IF NOT EXISTS météo
+$creation = "CREATE TABLE IF NOT EXISTS weather
     (`ville` varchar(9), `haut` int, `bas` int)";
 $bd->exec($creation);
 
@@ -99,7 +99,7 @@ if( isset($_POST['submit'])) {
 
     if(!empty($_POST['ville']) && !empty($_POST['maxima']) && !empty($_POST['minima'])) {
 
-        $sql = "INSERT INTO météo (ville, haut, bas) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO weather (ville, haut, bas) VALUES (?, ?, ?)";
    
         if ($_POST['ville'] != $_SESSION['previous'] ) {
             $bd->prepare($sql)->execute([ $_POST['ville'], $_POST['maxima'], $_POST['minima']]);
@@ -115,7 +115,7 @@ if(isset($_POST['refresh'])) {
     foreach($_POST['toDelete'] as $valeur)
     {
         
-      $sql2 = "DELETE FROM `météo` WHERE `ville`=?";
+      $sql2 = "DELETE FROM `weather` WHERE `ville`=?";
       $bd->prepare($sql2)->execute([$valeur]);
      
     }
@@ -128,7 +128,7 @@ if(isset($_POST['refresh'])) {
 
 // on store dans une variable une table 
 
-$resultat = $bd->query('SELECT * FROM météo');
+$resultat = $bd->query('SELECT * FROM weather');
 
 //convertir le sql en php
 
