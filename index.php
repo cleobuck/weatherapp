@@ -79,7 +79,7 @@
 require 'connection.php'; 
 
 $creation = "CREATE TABLE IF NOT EXISTS weather
-    (`ville` varchar(9), `haut` int, `bas` int)";
+    (ville varchar(9), haut int, bas int)";
 $bd->exec($creation);
 
 
