@@ -102,13 +102,17 @@ require 'connection.php';
 
 if(isset($_POST['emailReg'])) {
 
-if ($_SESSION['emailReg'] != $_POST['emailReg']) {
+if ($_SESSION['emailReg'] != $_POST['emailReg'] && $_SESSION['passwordReg'] != $_POST['passwordReg'] ) {
 
+    $_SESSION['emailReg'] = $_POST['emailReg'];
+    $_SESSION['passwordReg'] = $_POST['passwordReg'];
+    
+    
     if($_POST['passwordReg'] == $_POST['confirmReg']) {
         $newUser = "INSERT INTO users (email, pass) values (?,?)";
         $bd->prepare($newUser)->execute([$_POST['emailReg'], sha1($_POST['passwordReg'])]);
         echo "<p> nouveau compte créé</p> ";
-        $_SESSION['emailReg'] = $_POST['emailReg'];
+        
         } else {
             echo "<p>les mots de passe doivent être similaires</p>";
         }
