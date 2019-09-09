@@ -11,7 +11,7 @@ require 'connection.php';
     } else if (isset($_POST['email']) && isset($_POST['motdepasse'])) {
 
         $totalUsers = $bd->query('SELECT * FROM users');
-        $user = $totalUsers->fetch();
+       
     
         $userMatch = false;
         $_SESSION['connected'] = false;
@@ -23,14 +23,12 @@ require 'connection.php';
             {
                 $_SESSION['connected'] = true;    
                 $userMatch = true;
+                echo "yes";
             }
         }
 
-        if ($userMatch == true) {
-            header('location:weather.php');
-        } else {
-            header('location: index.php');
-        }
+        $userMatch == true? header('location:weather.php'):header('location: index.php');
+        
 
     } else {
         header('location: index.php');
