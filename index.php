@@ -46,6 +46,10 @@
         color: white;
         font-weight: bolder;
     }
+    p {
+        font-weight: bolder;
+        color: white;
+    }
 
 
 
@@ -106,7 +110,7 @@ if ($_SESSION['emailReg'] != $_POST['emailReg']) {
         echo "<p> nouveau compte créé</p> ";
         $_SESSION['emailReg'] = $_POST['emailReg'];
         } else {
-            echo "les mots de passe doivent être similaires";
+            echo "<p>les mots de passe doivent être similaires</p>";
         }
     }
 
