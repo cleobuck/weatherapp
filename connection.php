@@ -16,7 +16,7 @@ catch(Exception $e)
 
 //creation de la table users
 
-$sql=$bed->prepare("DROP TABLE  users");
+$sql=$bd->prepare("DROP TABLE  users");
 
 $sql->execute();
 
