@@ -16,9 +16,6 @@ catch(Exception $e)
 
 //creation de la table users
 
-$sql=$bd->prepare("DROP TABLE  users");
-
-$sql->execute();
 
 $users = "CREATE TABLE IF NOT EXISTS users
     (email varchar(25), pass varchar(500))";
